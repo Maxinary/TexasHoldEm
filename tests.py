@@ -1,5 +1,6 @@
 import assets
 import deck
+import hand_value
 
 # "ENUM" tests
 
@@ -16,8 +17,8 @@ for i in assets.SUIT:
 
 
 # Deck Tests
-
 print("Shuffle Method")
+
 x = deck.Deck()
 print(x.cards)
 x.shuffle()
@@ -30,3 +31,10 @@ print(x.draw())
 
 x = deck.Deck()
 print(x.draw()[0])
+
+# hand_value tests
+print("hand_value methods")
+x = hand_value.PlayerHand((
+    (assets.RANK.ACE, assets.SUIT.CLUBS),
+    (assets.RANK.EIGHT, assets.SUIT.DIAMONDS)
+))
