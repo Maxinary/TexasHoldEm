@@ -22,3 +22,11 @@ x = deck.Deck()
 print(x.cards)
 x.shuffle()
 print(x.cards)
+
+print("Draw Method")
+x = deck.Deck()
+print(x.draw())
+print(x.draw())
+
+x = deck.Deck()
+print(x.draw()[0])
