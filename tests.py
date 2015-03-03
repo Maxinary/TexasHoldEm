@@ -1,21 +1,24 @@
-#!/usr/bin/python3
-
 import assets
+import deck
 
-
-### "ENUM" tests ###
+# "ENUM" tests
 
 print('### RANK ###')
 for i in assets.RANK:
-	print(i)
+    print(i)
 
 assert assets.RANK.TWO.value < assets.RANK.THREE.value
 print(assets.RANK.TWO.value, assets.RANK.THREE.value)
 
 print('### SUIT ###')
 for i in assets.SUIT:
-	print(i)
+    print(i)
 
-print('### COLOR ###')
-for i in assets.COLOR:
-	print(i)
+
+# Deck Tests
+
+print("Shuffle Method")
+x = deck.Deck()
+print(x.cards)
+x.shuffle()
+print(x.cards)
