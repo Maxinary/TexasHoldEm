@@ -33,8 +33,11 @@ x = deck.Deck()
 print(x.draw()[0])
 
 # hand_value tests
+
+# TODO redo
 print("hand_value methods")
 x = hand_value.PlayerHand((
     (assets.RANK.ACE, assets.SUIT.CLUBS),
     (assets.RANK.EIGHT, assets.SUIT.DIAMONDS)
 ))
+
