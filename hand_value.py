@@ -6,15 +6,23 @@ class PlayerHand():
     def __init__(self, hand_tuple):
         self.hand_tuple = hand_tuple
 
-        """
-        Formatted as RANK SUIT
-        Do something like this and the eval hand
-        """
+        self.get_ranks()
+
+    # This wont get suits but it should be somthing to the effect of this
+    def get_ranks(self):
+        return sorted([i[0].value for i in self.hand_tuple])
+
+    def pair(self):
+        for i, v in enumerate(self.get_ranks()):
+            if i < len(self.hand_tuple) - 1:
+                if [] is self.hand_tuple[i+1][0]:
+                    return True
 
     """
     This is really hard
     I need to go down the card checks
     """
+
     """
     def flush(self):
         x = sorted([i[0].value for i in self.hand_tuple])
@@ -57,11 +65,25 @@ print(x)
 
 
 # Then im gonna need unit test for all of these
-PlayerHand([
-    (RANK.TEN, SUIT.CLUBS),
-    (RANK.ACE, SUIT.CLUBS),
-    (RANK.KING, SUIT.CLUBS),
-    (RANK.QUEEN, SUIT.CLUBS),
-    (RANK.JACK, SUIT.CLUBS),
-    (RANK.FIVE, SUIT.DIAMONDS)
-]).flush()
+print(
+    PlayerHand([
+        (RANK.QUEEN, SUIT.CLUBS),
+        (RANK.QUEEN, SUIT.CLUBS),
+    ]).pair()
+)
+
+print(
+    PlayerHand([
+        (RANK.QUEEN, SUIT.CLUBS),
+        (RANK.ACE, SUIT.HEARTS),
+        (RANK.QUEEN, SUIT.CLUBS),
+    ]).pair()
+)
+
+print(
+    PlayerHand([
+        (RANK.QUEEN, SUIT.CLUBS),
+        (RANK.JACK, SUIT.HEARTS),
+        (RANK.ACE, SUIT.CLUBS),
+    ]).pair()
+)
