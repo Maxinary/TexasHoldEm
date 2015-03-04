@@ -10,8 +10,18 @@ class PlayerHand():
         Formatted as RANK SUIT
         Do something like this and the eval hand
         """
-        self.non_suit()
 
+    """
+    This is really hard
+    I need to go down the card checks
+    """
+    """
+    def flush(self):
+        x = sorted([i[0].value for i in self.hand_tuple])
+        for i in x:
+    """
+
+    '''
     def non_suit(self):
         # For non suit based hands
         # Gets ranks
@@ -33,7 +43,9 @@ class PlayerHand():
                 scores.append(HAND.THREE_OF_A_KIND)
 
         return scores
+    '''
 
+'''
 # UNIT TEST
 x = PlayerHand((
     (RANK.EIGHT, SUIT.DIAMONDS),
@@ -41,3 +53,15 @@ x = PlayerHand((
     (RANK.EIGHT, SUIT.DIAMONDS)
 )).non_suit()
 print(x)
+'''
+
+
+# Then im gonna need unit test for all of these
+PlayerHand([
+    (RANK.TEN, SUIT.CLUBS),
+    (RANK.ACE, SUIT.CLUBS),
+    (RANK.KING, SUIT.CLUBS),
+    (RANK.QUEEN, SUIT.CLUBS),
+    (RANK.JACK, SUIT.CLUBS),
+    (RANK.FIVE, SUIT.DIAMONDS)
+]).flush()
