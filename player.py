@@ -11,3 +11,13 @@ class Player():
         
     def bet():
         
+class Bot():
+    def __init__(self):
+        self.hand = [];
+    
+    def fold():
+        
+    def draw():
+        
+    def bet():
+        
